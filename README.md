@@ -1,47 +1,38 @@
 # catfact-cli-rs
 
-A small Rust CLI that fetches random cat facts from the [Cat Facts API](https://catfact.ninja/).
+> a small Rust CLI for fetching random cat facts because apparently i needed another cat project (copied C# but written in Rust, wow?)
 
-Built as a Rust learning project focused on REST APIs, asynchronous programming, JSON deserialization, and CLI structure.
+## About
+
+basically, i made this as a Rust learning project to practice working with REST APIs, asynchronous programming, JSON deserialization, and CLI structure
+
+it uses the Cat Facts API to fetch random cat facts, with an optional maximum fact length and the ability to keep fetching facts in a loop
+
+i also used my own Rust utility crate, `jstd`, for console input and output
 
 ## Features
 
-* Fetch random cat facts
-* Optional maximum fact length
-* Fetch multiple facts in a loop
-* Async HTTP requests with `reqwest` and `tokio`
-* JSON deserialization with `serde`
-* Console I/O with [`jstd`](https://github.com/jayywashere/jstd)
+- fetch random cat facts
+- optional maximum fact length
+- fetch multiple facts in a loop
+- async HTTP requests with `reqwest` and `tokio`
+- JSON deserialization with `serde`
+- console I/O with `jstd` (i LOVE using this crate of mine in my Rust projects)
 
-## Stack Used
+## Requirements
 
-* Rust
-* Reqwest
-* Serde
-* Tokio
-* jstd
-
-## Structure
-
-```text
-src/
-├── main.rs
-├── app.rs
-├── api/
-│   ├── mod.rs
-│   └── cat_fact_client.rs
-└── models/
-    ├── mod.rs
-    └── cat_fact.rs
-```
+- Rust
+- Cargo
 
 ## Running
+
+run the program with:
 
 ```bash
 cargo run
 ```
 
-For a release build:
+for a release build:
 
 ```bash
 cargo build --release
@@ -51,20 +42,26 @@ cargo build --release
 
 ```text
 Maximum fact length (leave blank for none): 20
+
 Cats have 3 eyelids.
+
 (20 characters)
 
 Get another fact? (y/n): n
 ```
 
-## What I Learned (And Will Forget Tomorrow)
+## What I Learned
 
-* Rust modules and structs
-* `Option<T>` and `Result<T, E>`
-* Error propagation with `?`
-* `async` / `await`
-* HTTP requests and REST APIs
-* JSON deserialization with Serde
-* `FromStr`
-* Using a personal Rust utility crate
-* Separating application, API, and model logic
+- Rust modules and structs
+- `Option<T>` and `Result<T, E>`
+- error propagation with `?`
+- `async` / `await`
+- HTTP requests and REST APIs
+- JSON deserialization with Serde
+- `FromStr`
+- using a personal Rust utility crate
+- separating application, API, and model logic
+
+## License
+
+See [LICENSE](LICENSE).
